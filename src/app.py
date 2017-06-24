@@ -27,6 +27,12 @@ def test():
     return "Good Test!"
 
 
+@app.route("/news")
+def get_analysis():
+    url = request.args.get('url')
+    return url
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
