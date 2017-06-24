@@ -15,5 +15,5 @@ app.conf.update(
 @app.task
 def add(a, b):
     ''' test '''
-    print 'test'
+    print('test')
     return a + b
