@@ -23,7 +23,7 @@ def catch_all(path):
 
 @app.route("/test", methods=['GET'])
 def test():
-    #tasks.add.delay(1,2)
+    tasks.add.delay(1,2) # test
     return "Good Test!"
 
 
