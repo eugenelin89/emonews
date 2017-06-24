@@ -3,6 +3,7 @@
 from __future__ import print_function
 from flask import Flask, request, make_response, abort, logging
 import urllib, json, os, sys, requests, tasks
+from celery.result import AsyncResult
 # _access_token and _post_msg_url will eventually be moved to another module/process for sending messages.
 
 #########
@@ -23,9 +24,15 @@ def catch_all(path):
 
 @app.route("/test", methods=['GET'])
 def test():
-    tasks.add.delay(1,2) # test
-    return "Good Test!"
+    res = tasks.add.delay(1,2) # test
+    return res.id
 
+@app.route("/result", methods=['GET'])
+def get_result():
+    id = request.args.get('id')
+    res = AsyncResult(id)
+    print(res.ready())
+    return 'ok'
 
 @app.route("/news")
 def get_analysis():
