@@ -42,7 +42,7 @@ def get_result():
 def get_analysis():
     url = request.args.get('url')
     res = tasks.analyze.delay(url)
-    return res.id
+    return str({"id":res.id})
 
 
 
