@@ -29,3 +29,7 @@ six==1.10.0
 uritemplate==0.6
 Werkzeug==0.11.11
 flask-cors==3.0.2
+scikit-learn>=0.18
+newspaper==0.0.2
+nltk>=3.2.4
+kitchen==1.2.4
