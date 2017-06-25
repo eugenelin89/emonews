@@ -33,8 +33,9 @@ def get_result():
     res = AsyncResult(id)
     data = {'ready':res.ready}
     if data['ready']:
+        print('Ready')
         data['result'] = res.get(timeout = 1)
-    return json.dumps(data, indent = 4)
+    return data
 
 @app.route("/news")
 def get_analysis():
