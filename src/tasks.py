@@ -21,5 +21,5 @@ def add(a, b):
 @app.task
 def analyze(url):
     result = analyze_article(url)
-    result["prediction"] = random.randint(0, 1)
+    result["prediction"] = random.randint(0, 1) # Intent is to use actual result when bug is fixed.
     return result #analyze_article(url) #{'url':url}
