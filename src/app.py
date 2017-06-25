@@ -35,6 +35,7 @@ def get_result():
     if data['ready']:
         print('Ready')
         data['result'] = res.get(timeout = 1)
+        print(data)
     return data
 
 @app.route("/news")
