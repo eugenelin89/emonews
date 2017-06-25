@@ -1,5 +1,5 @@
 # https://www.cloudamqp.com/docs/celery.html
-import celery, os, requests, json
+import celery, os, requests, json, random
 from analysis import analyze_article
 
 
