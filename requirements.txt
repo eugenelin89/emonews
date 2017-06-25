@@ -34,3 +34,4 @@ newspaper==0.0.2
 nltk>=3.2.4
 kitchen==1.2.4
 numpy>=1.13.0
+textblob>=0.12.0
