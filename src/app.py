@@ -39,13 +39,13 @@ def get_result():
         print('Ready')
         data['result'] = res.get(timeout = 1)
         print(data)
-    return str(data)
+    return json.dumps(data, indent = 4)
 
 @app.route("/news")
 def get_analysis():
     url = request.args.get('url')
     res = tasks.analyze.delay(url)
-    return str({"id":res.id})
+    return json.dumps({"id":res.id}, indent = 4)
 
 
 
