@@ -4,12 +4,15 @@ from __future__ import print_function
 from flask import Flask, request, make_response, abort, logging
 import urllib, json, os, sys, requests, tasks
 from celery.result import AsyncResult
+from flask_cors import CORS, cross_origin
+
 # _access_token and _post_msg_url will eventually be moved to another module/process for sending messages.
 
 #########
 # Setup #
 #########
 app = Flask(__name__)
+CORS(app)
 # We put _menu here because it stays in memory and reduce fetching from firebase.
 _menu = None
 
