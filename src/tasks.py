@@ -16,3 +16,7 @@ app.conf.update(
 def add(a, b):
     ''' test '''
     return {'result' : a + b}
+
+@app.task
+def analyze(url):
+    return {'result':'blah'}

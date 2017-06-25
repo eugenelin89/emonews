@@ -41,7 +41,8 @@ def get_result():
 @app.route("/news")
 def get_analysis():
     url = request.args.get('url')
-    return url
+    res = tasks.analyze.delay(url)
+    return res.id
 
 
 
