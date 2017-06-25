@@ -31,7 +31,7 @@ def test():
 def get_result():
     id = request.args.get('id')
     res = AsyncResult(id)
-    r = 'Noe'
+    r = 'None'
     if res.ready():
         r = res.get(timeout=1)
     return str(r)
