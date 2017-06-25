@@ -19,4 +19,4 @@ def add(a, b):
 
 @app.task
 def analyze(url):
-    return {'result':'blah'}
+    return {'url':url}
