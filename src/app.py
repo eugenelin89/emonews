@@ -32,8 +32,9 @@ def get_result():
     id = request.args.get('id')
     res = AsyncResult(id)
     if res.ready():
+        print('result ready')
         print(res.get(timeout=1))
-    return ok
+    return 'ok'
 
 @app.route("/news")
 def get_analysis():
