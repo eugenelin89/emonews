@@ -20,4 +20,6 @@ def add(a, b):
 
 @app.task
 def analyze(url):
-    return analyze_article(url) #{'url':url}
+    result = analyze_article(url)
+    result["prediction"] = random.randint(0, 1)
+    return result #analyze_article(url) #{'url':url}
