@@ -1,5 +1,6 @@
 # https://www.cloudamqp.com/docs/celery.html
 import celery, os, requests, json
+from analysis import analyze_article
 
 
 
@@ -19,4 +20,4 @@ def add(a, b):
 
 @app.task
 def analyze(url):
-    return {'url':url}
+    return analyze_article(url) #{'url':url}
