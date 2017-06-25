@@ -31,10 +31,10 @@ def test():
 def get_result():
     id = request.args.get('id')
     res = AsyncResult(id)
-    r = 'None'
-    if res.ready():
-        r = res.get(timeout=1)
-    return str(r)
+    data = {'ready':res.ready}
+    if data['ready']:
+        data['result'] = res.get(timeout = 1)
+    return json.dumps(data, indent = 4)
 
 @app.route("/news")
 def get_analysis():
