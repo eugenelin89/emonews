@@ -36,11 +36,11 @@ def count_char(x):
 	returns number of capital letters
 	x: string
 	'''
-    if isinstance(x,int):
-        x = str(x)
-    if isinstance(x,float):
-        x = str(x)
-    return sum(1 for c in x if c.isupper())
+	if isinstance(x,int):
+		x = str(x)
+	if isinstance(x,float):
+		x = str(x)
+	return sum(1 for c in x if c.isupper())
 
 def analyze_article(url):
 
@@ -52,11 +52,14 @@ def analyze_article(url):
 	test_x = test_x.reshape(1, -1) 
 	print test_x
 
+	result = np.array([0])
 	# load the model from disk
-	loaded_model = pickle.load(open(model_filename, 'rb'))
-	result = loaded_model.score(test_x)
-	print(result)
+	# loaded_model = pickle.load(open(model_filename, 'rb'))
+	# result = loaded_model.score(test_x)
+	# print(result)
 	#test_pred = model.predict(test_x)
+
+	return({'text':text,'title':title,'prediction':result[0]})
 
 if __name__ == '__main__':
 
